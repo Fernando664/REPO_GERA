@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-(_lqe92b$m&=y)yg(v(p05yl7n&1leve2b*&8bd^snbor($9cv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['repo-gera.onrender.com']
 
 
 # Application definition
