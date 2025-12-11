@@ -1,0 +1,64 @@
+{% extends "Nivelacion/base.html" %}
+
+{% block title %}Lista de materias{% endblock %}
+
+{% block content %}
+
+<section>
+    <h2>Agregar comentario</h2>
+    <form id="form-materia" method="post" novalidate>
+        {% csrf_token %}
+
+        <label for="id_nombre_materia">Nombre de la materia:</label>
+        {{ form.nombre_materia }}
+
+        <label for="id_profesor">Profesor:</label>
+        {{ form.profesor }}
+
+        <label for="id_comentario">Comentario:</label>
+        {{ form.comentario }}
+
+        <label for="id_calificacion">Calificación (0–100):</label>
+        {{ form.calificacion }}
+
+        <label for="id_semestre">Semestre:</label>
+        {{ form.semestre }}
+
+        <button type="submit">Guardar</button>
+        <div id="errores-form" class="errores"></div>
+    </form>
+</section>
+
+<section>
+    <h2>Registros guardados</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Materia</th>
+            <th>Profesor</th>
+            <th>Comentario</th>
+            <th>Calificación</th>
+            <th>Semestre</th>
+            <th>Fecha</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for r in registros %}
+            <tr>
+                <td>{{ r.nombre_materia }}</td>
+                <td>{{ r.profesor }}</td>
+                <td>{{ r.comentario }}</td>
+                <td>{{ r.calificacion }}</td>
+                <td>{{ r.semestre }}</td>
+                <td>{{ r.fecha_registro|date:"d/m/Y H:i" }}</td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="6">No hay registros aún.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+{% endblock %}

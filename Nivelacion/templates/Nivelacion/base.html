@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Registro de materias{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Nivelacion/styles.css' %}">
+</head>
+<body>
+<header>
+    <h1>Materias y comentarios del semestre</h1>
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer>
+    <p>Proyecto de nivelación – Programación Web</p>
+</footer>
+
+<script src="{% static 'Nivelacion/validacion.js' %}"></script>
+</body>
+</html>
