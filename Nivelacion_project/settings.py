@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-(_lqe92b$m&=y)yg(v(p05yl7n&1leve2b*&8bd^snbor($9cv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['repo-gera.onrender.com']
+ALLOWED_HOSTS = ['repo-gera.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -127,6 +127,9 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://repo-gera.onrender.com',
+]
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
