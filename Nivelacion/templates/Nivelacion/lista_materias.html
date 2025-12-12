@@ -61,4 +61,11 @@
     </table>
 </section>
 
+<script>
+    document.querySelectorAll("td:nth-child(4)").forEach(td => {
+        if (+td.textContent < 70) td.style.color = "red";
+    });
+</script>
+
+
 {% endblock %}
